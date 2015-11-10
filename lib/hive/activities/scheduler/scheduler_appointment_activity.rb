@@ -67,8 +67,9 @@ module Hive
         coerce_key :time, Time
         coerce_key :attendees, Array[Attendee]
 
+        property :source, required: true
         property :title, required: true
-        property :description, required: true
+        property :description
         property :infoLink
         property :price
         property :location
