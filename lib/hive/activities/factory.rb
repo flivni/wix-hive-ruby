@@ -47,6 +47,8 @@ module Hive
     HOTELS_PURCHASE = ActivityType.new(Hotels::PurchaseActivity, 'hotels/purchase')
     HOTELS_PURCHASE_FAILED = ActivityType.new(Hotels::PurchaseFailedActivity, 'hotels/purchase-failed')
     SCHEDULER_APPOINTMENT = ActivityType.new(Scheduler::AppointmentActivity, 'scheduler/appointment')
+    SCHEDULER_CONFIRMATION = ActivityType.new(Scheduler::AppointmentActivity, 'scheduler/confirmation')
+    SCHEDULER_CANCEL = ActivityType.new(Scheduler::AppointmentActivity, 'scheduler/cancel')
     SHIPPING_SHIPPED = ActivityType.new(Shipping::ShippedActivity, 'shipping/shipped')
     SHIPPING_DELIVERED = ActivityType.new(Shipping::DeliveredActivity, 'shipping/delivered')
     SHIPPING_STATUS_CHANGED = ActivityType.new(Shipping::StatusChangedActivity, 'shipping/status-changed')
