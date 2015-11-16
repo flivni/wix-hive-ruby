@@ -123,6 +123,8 @@ module Hive
         faraday.use Faraday::Response::Logger, Logger.new('hive.log')
       when :stdout
         faraday.use Faraday::Response::Logger
+      when :stdout_verbose
+        faraday.use Faraday::Response::Logger, nil, :bodies => true
       end
     end
     # :nocov:
@@ -143,7 +145,11 @@ module Hive
     end
 
     def connection
-      @connection ||= Faraday.new(@api_base, connection_options)
+      if !@connection
+        @connection = Faraday.new(@api_base, connection_options)
+        #@connection.response :logger, ::Logger.new(STDOUT), :bodies => true
+      end
+      return @connection
     end
   end
 end
