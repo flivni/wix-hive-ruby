@@ -26,6 +26,12 @@ module Hive
         perform_with_object(:put, 'v1/contacts', Hashie::Mash, body: args.to_json)
       end
 
+      # uses the v2.0 of the library
+      # Note: passing in the version string appears to be optional. The backend differentiates based on POST (v2) vs PUT (v1)
+      def upsert_contact2(args)
+        perform_with_object(:post, 'v1/contacts', Hashie::Mash, body: args.to_json, params: { 'version' => '2.0.0' })
+      end
+
       def contacts_tags
         perform_with_object(:get, 'v1/contacts/tags', Array)
       end
