@@ -25,5 +25,3 @@ module Hive
     end
   end
 end
-
-Faraday::Response.register_middleware parse_json: Hive::Response::ParseJson

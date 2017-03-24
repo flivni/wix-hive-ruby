@@ -105,10 +105,10 @@ module Hive
         faraday.request :json
         # Encodes as "application/x-www-form-urlencoded" if not already encoded
         faraday.request :url_encoded
-        # Handle error responses
-        faraday.response :raise_error
-        # Parse JSON response bodies
-        faraday.response :parse_json
+        # Use custom middleware for errors
+        faraday.use Hive::Response::RaiseError
+        # Use custom middleware for parsing
+        faraday.use Hive::Response::ParseJson
         # Log requests to the STDOUT
         add_logger(faraday)
         # Set default HTTP adapter

@@ -13,5 +13,3 @@ module Hive
     end
   end
 end
-
-Faraday::Response.register_middleware raise_error: Hive::Response::RaiseError
