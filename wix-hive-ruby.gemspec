@@ -30,9 +30,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.24'
   spec.add_development_dependency 'vcr', '~> 2.9'
   spec.add_development_dependency 'coveralls', '~> 0.7'
-  spec.add_dependency 'faraday', '~> 0.9.0', '>= 0.9.0'
+  spec.add_dependency 'faraday', '~> 0.13.1'
+  spec.add_dependency 'faraday_middleware', '~> 0.12.2'
   spec.add_dependency 'mime-types', '~> 1.25', '>= 1.25'
   spec.add_dependency 'json', '~> 1.8.1', '>= 1.8.1'
   spec.add_dependency 'hashie', '~> 3.2.0', '>= 3.2.0'
-  spec.add_dependency 'faraday_middleware', '~> 0.9.1', '>= 0.9.1'
 end
